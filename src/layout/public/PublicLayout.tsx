@@ -4,12 +4,14 @@ import { Box } from "@mui/material";
 const PublicLayout = () => {
   return (
     <Box
-      width="100%"
-      minHeight="100vh"
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      bgcolor="background.default"
+      sx={{
+        width: "100%",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        bgcolor: "background.default",
+      }}
     >
       <Outlet />
     </Box>

@@ -38,7 +38,7 @@ const PrivateLayoutLogout = () => {
   };
 
   const handleLogout = () => {
-    logout(cleanTheDb);
+    logout();
   };
 
   return (
@@ -60,28 +60,35 @@ const PrivateLayoutLogout = () => {
             borderRadius: "20px",
           })}
         >
-          <Box p={3}>
+          <Box sx={{ padding: 3 }}>
             <Box
-              display="flex"
-              justifyContent="center"
-              color="error.main"
-              mb="20px"
-              mt="10px"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                color: "error.main",
+                mb: "20px",
+                mt: "10px",
+              }}
             >
               <Logout width="70" height="70" />
             </Box>
             <Typography
               variant="h5"
-              textAlign="center"
-              fontWeight="bold"
-              mb="10px"
+              sx={{
+                textAlign: "center",
+                fontWeight: "bold",
+                marginBottom: "10px",
+              }}
             >
               {t("Are you sure you want to log out?")}
             </Typography>
-            <Typography variant="body2" textAlign="center" mb="50px">
+            <Typography
+              variant="body2"
+              sx={{ textAlign: "center", marginBottom: "50px" }}
+            >
               {t("Logging out will end your current session.")}
             </Typography>
-            <Box mb="7px">
+            <Box sx={{ marginBottom: "7px" }}>
               <FormControlLabel
                 checked={cleanTheDb}
                 label={t("Clear data on this device (recommended)")}
@@ -100,10 +107,12 @@ const PrivateLayoutLogout = () => {
             </Alert>
 
             <Box
-              display="flex"
-              justifyContent="flex-end"
-              columnGap="10px"
-              pt="20px"
+              sx={{
+                display: "flex",
+                justifyContent: "flex-end",
+                columnGap: "10px",
+                pt: "20px",
+              }}
             >
               <Button
                 autoFocus

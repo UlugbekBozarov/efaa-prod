@@ -1,9 +1,9 @@
 import { useCallback } from "react";
 
-// import { useAppStore } from "@/store/app.store";
+import { useAppStore } from "@/store/app.store";
 
 const useConfig = () => {
-  // const isOnline = useAppStore((state) => state.isOnline);
+  const isOnline = useAppStore((state) => state.isOnline);
   // const initialized = useAppStore((state) => state.initialized);
   // const initialLoading = useAppStore((state) => state.initialLoading);
   // const initialProgress = useAppStore((state) => state.initialProgress);
@@ -18,7 +18,7 @@ const useConfig = () => {
 
   return {
     // initialized,
-    // isOnline,
+    isOnline,
     // initialLoading,
     // initialProgress,
     // device,

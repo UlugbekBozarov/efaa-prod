@@ -32,6 +32,7 @@ const formNames = {
 };
 
 const AuthSignIn = () => {
+  console.log("Auth sign in page");
   const { t } = useTranslation();
 
   const host = window.location.hostname;
@@ -94,24 +95,37 @@ const AuthSignIn = () => {
   });
 
   return (
-    <Box maxWidth="400px" p="14px">
+    <Box sx={{ maxWidth: "400px", p: "14px" }}>
       <form onSubmit={submitHandler}>
-        <Box display="flex" justifyContent="center">
-          <Box width="100px" height="100px" color="primary.main">
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Box
+            sx={{
+              width: "100px",
+              height: "100px",
+              display: "flex",
+              justifyContent: "center",
+              color: "primary.main",
+            }}
+          >
             <Logo />
           </Box>
         </Box>
-        <Typography variant="h4" fontWeight={700}>
+        <Typography variant="h4" sx={{ fontWeight: 700 }}>
           {t("Hi, Welcome back!")}
         </Typography>
-        <Typography color="text.secondary" mb="20px">
+        <Typography sx={{ color: "text.secondary", mb: "20px" }}>
           {t("Glad to see you again.")}
         </Typography>
 
         <FormProvider {...formStore}>
-          <Grid container rowSpacing="24px" columnSpacing="16px" mb="20px">
+          <Grid
+            container
+            rowSpacing="24px"
+            columnSpacing="16px"
+            sx={{ mb: "20px" }}
+          >
             <Grid size={12}>
-              <Typography variant="h6" fontWeight="bold" mb="5px">
+              <Typography variant="h6" sx={{ fontWeight: "bold", mb: "5px" }}>
                 {t("Sign in to your account")}
               </Typography>
               <Typography variant="caption" color="text.secondary">
@@ -124,7 +138,7 @@ const AuthSignIn = () => {
             <Grid size={12}>
               <Collapse in={!!blockedMessage}>
                 <Alert severity="error" icon={<Info />}>
-                  <Typography fontSize="14px" color="error.dark">
+                  <Typography sx={{ fontSize: "14px", color: "error.dark" }}>
                     {t(blockedMessage || "")}
                   </Typography>
                 </Alert>
@@ -168,7 +182,10 @@ const AuthSignIn = () => {
                 }}
               />
             </Grid>
-            <Grid size={12} display="flex" justifyContent="flex-end">
+            <Grid
+              size={12}
+              sx={{ display: "flex", justifyContent: "flex-end" }}
+            >
               <Link to={forgotUrl}>{t("Forgot password?")}</Link>
             </Grid>
             <Grid size={12}>

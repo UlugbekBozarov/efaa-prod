@@ -9,7 +9,6 @@ const Routes = () => {
   const {
     state: { isAuthenticated, loading },
   } = useGlobalContext();
-  console.log("isAuthenticated, loading: ", isAuthenticated, loading);
 
   if (loading) return <FallbackSuspense />;
 

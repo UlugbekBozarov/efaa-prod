@@ -7,6 +7,7 @@ import { FallbackSuspense } from "@/components";
 const NotFound = lazy(() => import("../../pages/404/NotFound"));
 
 const AuthSignIn = lazy(() => import("../../pages/auth/AuthSignIn"));
+// const AuthForgotPassword = lazy(() => import("../../pages/forgot/"));
 
 const PublicRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const PublicRoutes = () => {
       <Routes>
         <Route path="/" element={<PublicLayout />}>
           <Route index element={<AuthSignIn />} />
+          <Route path="forgot-password" element={<AuthSignIn />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
